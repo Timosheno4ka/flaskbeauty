@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все отзывы о нас
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Отзывы о нас</h1>
+    {% if reviews|length > 0 %}
+    {% for el in reviews %}
+    <div class="alert alert-info">
+        <h2>{{el.name}}</h2>
+        <p>{{ el.text }}</p>
+        <p><b>Дата публикации: {{ el.date.date() }}</b></p>
+        <a href="/reviews/{{el.id}}" class="btn btn-warning">Читать весь отзыв</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>Нет отзывов</p>
+    {% endif %}
+</div>
+    <div class="container">
+        <a class="py-2 d-none d-md-inline-block" href="/create_review">Оставить отзыв</a>
+    </div>
+{% endblock %}

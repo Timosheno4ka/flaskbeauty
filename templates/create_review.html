@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Оставить отзыв
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Оставить отзыв</h1>
+    <form method="post">
+     <input type="text" name="name" id="name" class="container form-control" placeholder="Ваше имя"><br>
+     <textarea name="text" id="text" class="container form-control" placeholder="Оставьте отзыв"></textarea><br>
+     <div class="d-grig gap-2 col-6 mx-auto">
+       <input type="submit" class="btn btn-success" value="Оставить отзыв">
+    </form>
+</div>
+{% endblock %}
